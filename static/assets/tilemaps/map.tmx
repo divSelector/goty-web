@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="128" tileheight="128" infinite="0" backgroundcolor="#78867f" nextlayerid="6" nextobjectid="21">
+ <tileset firstgid="1" source="../tilesets/scifi-pipes.json"/>
+ <layer id="3" name="Background" width="100" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztk9sKgCAQRO2j/f/wLQiK3LlIzoEec2b3aD9a6+RvwM5gdHagms293/iIj/iIj/iIj/h478vygeo709kB+u4gfbg7O1C9Y/b+VrzrM6jmQub81cXgqT9yLmSOqrMD5s6v56pynGethmq2nXxU+n35l5HD7uygMiPCRyWH3VmJajZmzo4+ql2ROarOIYQQ7pzIeXIy
+  </data>
+ </layer>
+ <layer id="1" name="Platforms" width="100" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztmFEKgzAQRNOP+l9oe4LeIR6g9z9T0w9BloixSTbPMg8GNUZndgMKmUMIs4RhdB8oojC6DxRRGN0HiiiUZH01UK1H74wUStejhtJ+9nr+TGg9WGg9WHh8X2s9zvYPEEIIIYSwXJNuSZekCerhkZHAt87n6voR2tdb6+GRkcI9M/aGeXhkHEWLvcJ/EIVlvyGaoz3fUszM23rHrx4eGSmss0ajvdpy8+3Y3v0jHj0zUvgAAWiDpg==
+  </data>
+ </layer>
+</map>
