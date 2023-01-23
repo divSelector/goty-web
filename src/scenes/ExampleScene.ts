@@ -1,15 +1,13 @@
 import { Container, AnimatedSprite, Texture, Ticker } from "pixi.js"
+import { IScene } from "../Interfaces"
+import { Manager } from "../Manager"
 
-export class Scene extends Container {
-    private readonly screenWidth: number
-    private readonly screenHeight: number
 
+export class ExampleScene extends Container implements IScene {
     private player: AnimatedSprite
     private playerVelocity: number = 5
-    constructor(screenWidth: number, screenHeight: number ) {
+    constructor() {
         super()
-        this.screenWidth = screenWidth;
-        this.screenHeight = screenHeight;
 
         const framesPath: string = 'assets/sprites/player'
         const playerRunFrames: Array<string> = Array.from(
@@ -32,21 +30,21 @@ export class Scene extends Container {
     }
 
     private draw(): void {
-        console.log(`${this.screenWidth}${this.screenHeight}`)
+        console.log(`${Manager.width}${Manager.height}`)
         
         this.scale.set(2)
-        this.player.position.set(0,this.screenHeight/4)
+        this.player.position.set(0,Manager.height/4)
         this.player.loop = true
         this.player.animationSpeed = 0.167; 
         this.player.play()
         this.addChild(this.player);
     }
 
-    private update(deltaTime: number): void {
+    public update(deltaTime: number): void {
 
         this.player.x += this.playerVelocity * deltaTime
 
-        if (this.player.x > this.screenWidth) this.player.x = 0
+        if (this.player.x > Manager.width) this.player.x = 0
     }
 
 }
