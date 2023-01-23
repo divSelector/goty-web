@@ -1,3 +1,14 @@
+// *Dragon Ball Z Intro Music* 
+// ... 
+// Last Time, on Pointlessly Complicated Spaghetti Code Z, Goku was resolving paths 
+// to ~200 assets in over 20 directories in a manifest without access to the file system. 
+// Gathering all the files into the correct context, our heroes exported the ResolverManifest. 
+// But will they ever be able to understand what it does again? 
+//
+// FIND OUT NEXT TIME ON Pointlessly Complicated Spaghetti Code Z!!!!
+//
+// =============================================================================================
+//
 // The purpose of this file is to resolve the urls that direct to sprite assets
 // All the frames of each sprite are "bundled" into a single object so that they can be
 // pre-loaded together using a keyword that resolves to the url path of the asset.
