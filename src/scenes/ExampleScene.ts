@@ -1,4 +1,4 @@
-import { Container, AnimatedSprite, Texture } from "pixi.js"
+import { Container, AnimatedSprite, Texture, Assets } from "pixi.js"
 import { IScene } from "../Interfaces"
 import { Game } from "../Game"
 
@@ -9,13 +9,12 @@ export class ExampleScene extends Container implements IScene {
     constructor() {
         super()
 
-        const framesPath: string = 'assets/sprites/player'
         const playerRunFrames: Array<string> = Array.from(
-            [1,2,3,4], idx => `${framesPath}/run_${idx}.png`
+            [1,2,3,4], idx => `player/run_${idx}`
         )
-        
+        playerRunFrames.forEach(f => console.log(Assets.get(f)))
         this.player = new AnimatedSprite(
-            playerRunFrames.map(path => Texture.from(path))
+            playerRunFrames.map(path => Texture.from(Assets.get(path)) )
         )
         
         this.draw()

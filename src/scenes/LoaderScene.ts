@@ -1,18 +1,19 @@
 import { Container, Graphics, Assets } from "pixi.js";
 import { manifest } from "../assets";
 import { Game } from "../Game";
+import { IScene } from "../Interfaces";
 import { ExampleScene } from "./ExampleScene";
 
-export class LoaderScene extends Container {
+export class LoaderScene extends Container implements IScene {
 
     // for making our loader graphics...
     private loaderBar: Container;
     private loaderBarBorder: Graphics;
     private loaderBarFill: Graphics;
-    constructor(screenWidth: number, screenHeight: number) {
+    constructor() {
         super();
 
-        const loaderBarWidth = screenWidth * 0.8; // just an auxiliar variable
+        const loaderBarWidth = Game.width * 0.8; // just an auxiliar variable
         // the fill of the bar.
         this.loaderBarFill = new Graphics();
         this.loaderBarFill.beginFill(0x008800, 1)
@@ -31,8 +32,8 @@ export class LoaderScene extends Container {
         this.loaderBar.addChild(this.loaderBarBorder);
 
         // Center bar on screen
-        this.loaderBar.position.x = (screenWidth - this.loaderBar.width) / 2; 
-        this.loaderBar.position.y = (screenHeight - this.loaderBar.height) / 2;
+        this.loaderBar.position.x = (Game.width - this.loaderBar.width) / 2; 
+        this.loaderBar.position.y = (Game.height - this.loaderBar.height) / 2;
         this.addChild(this.loaderBar);
 
         // Start loading!
@@ -45,10 +46,10 @@ export class LoaderScene extends Container {
     private async initializeLoader(): Promise<void>
     {
         await Assets.init({ manifest: manifest });
-        const bundleIds =  manifest.bundles.map(bundle => bundle.name);
+        // const bundleIds =  manifest.bundles.map(bundle => bundle.name);
 
         // The second parameter for `loadBundle` is a function that reports the download progress!
-        await Assets.loadBundle(bundleIds, this.downloadProgress.bind(this));
+        await Assets.loadBundle('player', this.downloadProgress.bind(this));
     }
 
     private downloadProgress(progressRatio: number): void {
@@ -63,5 +64,9 @@ export class LoaderScene extends Container {
         this.removeChild(this.loaderBar);
 
         Game.changeScene(new ExampleScene())
+    }
+
+    public update(deltaTime: number): void {
+        //pass
     }
 }
