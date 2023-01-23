@@ -1,6 +1,6 @@
 import { Container, AnimatedSprite, Texture } from "pixi.js"
 import { IScene } from "../Interfaces"
-import { Manager } from "../Manager"
+import { Game } from "../Game"
 
 
 export class ExampleScene extends Container implements IScene {
@@ -30,10 +30,10 @@ export class ExampleScene extends Container implements IScene {
     }
 
     private draw(): void {
-        console.log(`${Manager.width}${Manager.height}`)
+        console.log(`${Game.width}${Game.height}`)
         
         this.scale.set(2)
-        this.player.position.set(0,Manager.height/4)
+        this.player.position.set(0,Game.height/4)
         this.player.loop = true
         this.player.animationSpeed = 0.167; 
         this.player.play()
@@ -44,7 +44,7 @@ export class ExampleScene extends Container implements IScene {
 
         this.player.x += this.playerVelocity * deltaTime
 
-        if (this.player.x > Manager.width) this.player.x = 0
+        if (this.player.x > Game.width) this.player.x = 0
     }
 
 }
