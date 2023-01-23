@@ -74,30 +74,38 @@ export const manifest: ResolverManifest = {
     
     // This is an example of what a ManifestBundle entry is going to look like.
     // Refer to static/assets/sprites to see how to access similar textures.
-    //   {
-    //     name: 'shield01',
+    // {
+    //     name: 'shield08',
     //     assets: {
-    //       'shield01/stand_idle': 'assets/sprites/shield01/stand_idle.png',
-    //       'shield01/stand_damaged': 'assets/sprites/shield01/stand_damaged.png',
-    //       'shield01/jump_air': 'assets/sprites/shield01/jump_air.png',
-    //       'shield01/jump_ground': 'assets/sprites/shield01/jump_ground.png',
-    //       'shield01/jump_damaged': 'assets/sprites/shield01/jump_damaged.png',
-    //       'shield01/crouch_idle': 'assets/sprites/shield01/crouch_idle.png',
-    //       'shield01/crouch_slide': 'assets/sprites/shield01/crouch_slide.png',
-    //       'shield01/crouch_damaged': 'assets/sprites/shield01/crouch_damaged.png',
-    //       'shield01/crouch_attack_1': 'assets/sprites/shield01/crouch_attack_1.png',
-    //       'shield01/crouch_attack_2': 'assets/sprites/shield01/crouch_attack_2.png',
-    //       'shield01/crouch_attack_3': 'assets/sprites/shield01/crouch_attack_3.png',
-    //       'shield01/crouch_attack_4': 'assets/sprites/shield01/crouch_attack_4.png',
-    //       'shield01/stand_attack_1': 'assets/sprites/shield01/stand_attack_1.png',
-    //       'shield01/stand_attack_2': 'assets/sprites/shield01/stand_attack_2.png',
-    //       'shield01/stand_attack_3': 'assets/sprites/shield01/stand_attack_3.png',
-    //       'shield01/stand_attack_4': 'assets/sprites/shield01/stand_attack_4.png',
-    //       'shield01/jump_attack_1': 'assets/sprites/shield01/jump_attack_1.png',
-    //       'shield01/jump_attack_2': 'assets/sprites/shield01/jump_attack_2.png',
-    //       'shield01/jump_attack_3': 'assets/sprites/shield01/jump_attack_3.png',
-    //       'shield01/jump_attack_4': 'assets/sprites/shield01/jump_attack_4.png'
+    //       'shield08/stand_idle': 'assets/sprites/shield08/stand_idle.png',
+    //       'shield08/stand_damaged': 'assets/sprites/shield08/stand_damaged.png',
+    //       'shield08/jump_air': 'assets/sprites/shield08/jump_air.png',
+    //       'shield08/jump_ground': 'assets/sprites/shield08/jump_ground.png',
+    //       'shield08/jump_damaged': 'assets/sprites/shield08/jump_damaged.png',
+    //       'shield08/crouch_idle': 'assets/sprites/shield08/crouch_idle.png',
+    //       'shield08/crouch_slide': 'assets/sprites/shield08/crouch_slide.png',
+    //       'shield08/crouch_damaged': 'assets/sprites/shield08/crouch_damaged.png',
+    //       'shield08/crouch_attack_1': 'assets/sprites/shield08/crouch_attack_1.png',
+    //       'shield08/crouch_attack_2': 'assets/sprites/shield08/crouch_attack_2.png',
+    //       'shield08/crouch_attack_3': 'assets/sprites/shield08/crouch_attack_3.png',
+    //       'shield08/crouch_attack_4': 'assets/sprites/shield08/crouch_attack_4.png',
+    //       'shield08/stand_attack_1': 'assets/sprites/shield08/stand_attack_1.png',
+    //       'shield08/stand_attack_2': 'assets/sprites/shield08/stand_attack_2.png',
+    //       'shield08/stand_attack_3': 'assets/sprites/shield08/stand_attack_3.png',
+    //       'shield08/stand_attack_4': 'assets/sprites/shield08/stand_attack_4.png',
+    //       'shield08/jump_attack_1': 'assets/sprites/shield08/jump_attack_1.png',
+    //       'shield08/jump_attack_2': 'assets/sprites/shield08/jump_attack_2.png',
+    //       'shield08/jump_attack_3': 'assets/sprites/shield08/jump_attack_3.png',
+    //       'shield08/jump_attack_4': 'assets/sprites/shield08/jump_attack_4.png',
+    //       'shield08/run_1': 'assets/sprites/shield08/run_1.png',
+    //       'shield08/run_2': 'assets/sprites/shield08/run_2.png',
+    //       'shield08/run_3': 'assets/sprites/shield08/run_3.png',
+    //       'shield08/run_4': 'assets/sprites/shield08/run_4.png',
+    //       'shield08/run_5': 'assets/sprites/shield08/run_5.png',
+    //       'shield08/run_6': 'assets/sprites/shield08/run_6.png',
+    //       'shield08/run_7': 'assets/sprites/shield08/run_7.png',
+    //       'shield08/run_8': 'assets/sprites/shield08/run_8.png'
     //     }
-    //   },
+    
 }
 
