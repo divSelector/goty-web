@@ -10,6 +10,7 @@ export class LoaderScene extends Container implements IScene {
     private loaderBar: Container;
     private loaderBarBorder: Graphics;
     private loaderBarFill: Graphics;
+    assetBundles: string[] = ["player"]
 
     constructor(
         readonly bundleIds?: Array<string> | string | undefined
@@ -48,12 +49,12 @@ export class LoaderScene extends Container implements IScene {
         })
     }
 
-    private async initializeLoader(): Promise<void>
-    {
-        await Assets.init({ manifest: manifest });
-        // const bundleIds =  manifest.bundles.map(bundle => bundle.name);
+    constructorWithAssets(): void {}
 
-        // The second parameter for `loadBundle` is a function that reports the download progress!
+    private async initializeLoader(): Promise<void> {
+        await Assets.init({ manifest: manifest });
+
+        // The second parameter for `loadBundle` is a function that reports the download progress
         await Assets.loadBundle(this.bundleIds!, this.downloadProgress.bind(this));
     }
 
@@ -63,15 +64,13 @@ export class LoaderScene extends Container implements IScene {
     }
 
     private gameLoaded(): void {
-        // Our game finished loading!
-
-        // Let's remove our loading bar
         this.removeChild(this.loaderBar);
-
         Game.changeScene(new ExampleScene())
     }
 
     public update(deltaTime: number): void {
         //pass
+        
     }
+    
 }

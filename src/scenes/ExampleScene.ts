@@ -6,9 +6,16 @@ import { Game } from "../Game"
 export class ExampleScene extends Container implements IScene {
     private player: AnimatedSprite
     private playerVelocity: number = 5
+    assetBundles: string[] = ["player"]
+
     constructor() {
         super()
+        // Run any code here that doesn't need assets
+        this.player = undefined!
+    }
 
+    constructorWithAssets(): void {
+        // Manager will call this when we have all the assets!
         const playerRunFrames: Array<string> = Array.from(
             [1,2,3,4], idx => `player/run_${idx}`
         )
