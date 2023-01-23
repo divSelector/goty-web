@@ -1,4 +1,4 @@
-import { Container, AnimatedSprite, Texture, Ticker } from "pixi.js"
+import { Container, AnimatedSprite, Texture } from "pixi.js"
 import { IScene } from "../Interfaces"
 import { Manager } from "../Manager"
 
@@ -20,7 +20,7 @@ export class ExampleScene extends Container implements IScene {
         
         this.draw()
         
-        Ticker.shared.add(this.update.bind(this))
+        // Ticker.shared.add(this.update.bind(this))
         
         this.player.onFrameChange = this.onPlayerFrameChange.bind(this)
     }
