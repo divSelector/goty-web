@@ -10,7 +10,10 @@ export class LoaderScene extends Container implements IScene {
     private loaderBar: Container;
     private loaderBarBorder: Graphics;
     private loaderBarFill: Graphics;
-    constructor() {
+
+    constructor(
+        readonly bundleIds?: Array<string> | string | undefined
+        ) {
         super();
 
         const loaderBarWidth = Game.width * 0.8; // just an auxiliar variable
@@ -36,6 +39,8 @@ export class LoaderScene extends Container implements IScene {
         this.loaderBar.position.y = (Game.height - this.loaderBar.height) / 2;
         this.addChild(this.loaderBar);
 
+        this.bundleIds = bundleIds ?? manifest.bundles.map(bundle => bundle.name);
+
         // Start loading!
         this.initializeLoader().then(() => {
             // Constructors can't be async, so we are forced to use .then(...)
@@ -49,7 +54,7 @@ export class LoaderScene extends Container implements IScene {
         // const bundleIds =  manifest.bundles.map(bundle => bundle.name);
 
         // The second parameter for `loadBundle` is a function that reports the download progress!
-        await Assets.loadBundle('player', this.downloadProgress.bind(this));
+        await Assets.loadBundle(this.bundleIds!, this.downloadProgress.bind(this));
     }
 
     private downloadProgress(progressRatio: number): void {

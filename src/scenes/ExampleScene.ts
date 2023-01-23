@@ -14,7 +14,7 @@ export class ExampleScene extends Container implements IScene {
         )
         playerRunFrames.forEach(f => console.log(Assets.get(f)))
         this.player = new AnimatedSprite(
-            playerRunFrames.map(path => Texture.from(Assets.get(path)) )
+            playerRunFrames.map(path => Assets.get(path) as Texture )
         )
         
         this.draw()
