@@ -66,7 +66,7 @@ function createBundleAssetsObj(files: Array<string>, spriteName: string) {
 const spriteFileNames: Array<string> = getFrameFileNames()
 const spriteDirectoryNames: Array<string> = getSpriteDirectoryNames()
 
-export const manifest: ResolverManifest = {
+export const spritesManifest: ResolverManifest = {
     bundles: spriteDirectoryNames.map(name => ({
         name: name, 
         assets: createBundleAssetsObj(spriteFileNames, name)
