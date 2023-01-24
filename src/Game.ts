@@ -44,6 +44,9 @@ export class Game {
 
         // Add the ticker
         Game.app.ticker.add(Game.update)
+
+        window.addEventListener("resize", Game.resize)
+        Game.resize()
     }
 
     public static async changeScene(newScene: IScene): Promise<void> {
@@ -64,16 +67,37 @@ export class Game {
         // When assets are ready, tell the scene
         newScene.constructorWithAssets();
 
-        // Add the new one
         Game.currentScene = newScene;
         Game.app.stage.addChild(Game.currentScene);
     }
 
     // This update will be called by a pixi ticker and tell the scene that a tick happened
+    // and to run its update function.
     private static update(framesPassed: number): void {
-        // Let the current scene know that we updated it...
         if (Game.currentScene) {
             Game.currentScene.update(framesPassed);
+        }
+    }
+
+    public static resize(): void {
+        const screenWidth = Math.max(
+            document.documentElement.clientWidth, window.innerWidth || 0
+        )
+        const screenHeight = Math.max(
+            document.documentElement.clientHeight, window.innerHeight || 0
+        )
+        const scale = Math.min(screenWidth / Game.width, screenHeight / Game.height)
+        const enlargedWidth = Math.floor(scale * Game.width)
+        const enlargedHeight = Math.floor(scale * Game.height)
+        const horizontalMargin = (screenWidth - enlargedWidth) / 2
+        const verticalMargin = (screenHeight - enlargedHeight) / 2
+        
+        const style = (Game.app.view as HTMLCanvasElement).style
+        if (style) {
+            style.width = `${enlargedWidth}px`;
+            style.height = `${enlargedHeight}px`;
+            style.marginLeft = style.marginRight = `${horizontalMargin}px`;
+            style.marginTop = style.marginBottom = `${verticalMargin}px`;
         }
     }
 }
