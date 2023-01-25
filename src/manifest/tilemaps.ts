@@ -6,7 +6,7 @@ export const tilemapManifest: ResolverManifest = {
             name : "tilemaps",
             assets:
             {
-                "map" : "assets/tilemaps/map.json",
+                "map" : "assets/tilemaps/dark.json",
             }
         }
     ]

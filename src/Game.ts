@@ -2,8 +2,6 @@ import { Application, Assets } from "pixi.js";
 import { IScene } from "./Interfaces";
 import { manifest } from "./manifest/index";
 
-console.log(manifest)
-
 export class Game {
     private constructor() { /*Static Class*/ }
 
